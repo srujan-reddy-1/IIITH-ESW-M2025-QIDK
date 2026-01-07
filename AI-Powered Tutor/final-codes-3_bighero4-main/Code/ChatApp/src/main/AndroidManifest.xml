@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions must be outside <application> tag -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Additional permissions for shell execution attempts -->
+
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AITutor">
+        <activity
+            android:name="com.quicinc.chatapp.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.Conversation"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.QuizActivity"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.QuizReviewActivity"
+            android:parentActivityName="com.quicinc.chatapp.RecentQuizzesActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.RecentQuizzesActivity"
+            android:parentActivityName="com.quicinc.chatapp.ProfileActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.FlashcardActivity"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.SubjectsActivity"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.SubjectDetailActivity"
+            android:parentActivityName="com.quicinc.chatapp.SubjectsActivity" >
+        </activity>
+
+        <activity
+            android:name="com.quicinc.chatapp.ProfileActivity"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.quicinc.chatapp.DetailedProgressActivity"
+            android:parentActivityName="com.quicinc.chatapp.MainActivity" >
+        </activity>
+        
+        <activity android:name=".EditProfileActivity"
+            android:parentActivityName=".ProfileActivity" />
+        <activity android:name=".AchievementsActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".StudyGoalsActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".DeveloperSettingsActivity"
+            android:parentActivityName=".ProfileActivity" />
+
+        <uses-native-library
+            android:name="libadsprpc.so"
+            android:required="false" />
+        <uses-native-library
+            android:name="libcdsprpc.so"
+            android:required="false" />
+    </application>
+</manifest>

@@ -1,0 +1,15 @@
+# Android build outputs
+**/build/
+**/intermediates/
+
+# Native binaries
+*.so
+*.bin
+
+# Qualcomm / SNPE / QNN SDK artifacts
+**/jniLibs/
+**/qnn/
+**/snpe/
+
+# Large media / datasets
+

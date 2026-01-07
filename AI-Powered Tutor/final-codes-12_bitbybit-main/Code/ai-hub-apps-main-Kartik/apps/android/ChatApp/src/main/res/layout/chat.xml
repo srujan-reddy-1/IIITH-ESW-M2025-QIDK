@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pdf_status_layout"
+        android:padding="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycler_view"
+            android:stackFromBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
+    </RelativeLayout>
+
+    <!-- PDF Status Bar -->
+    <LinearLayout
+        android:id="@+id/pdf_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_layout"
+        android:background="#E3F2FD"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:src="@android:drawable/ic_menu_upload"
+            android:contentDescription="PDF Icon" />
+
+        <TextView
+            android:id="@+id/pdf_status_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="No PDF loaded"
+            android:textSize="14sp"
+            android:textColor="#1976D2" />
+
+        <ImageButton
+            android:id="@+id/clear_pdf_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Clear PDF" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:id="@+id/bottom_layout">
+
+        <ImageButton
+            android:id="@+id/pdf_button"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select PDF"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_upload" />
+
+        <ImageButton
+            android:id="@+id/image_button"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_toEndOf="@id/pdf_button"
+            android:layout_centerInParent="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select Image"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <EditText
+            android:id="@+id/user_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toStartOf="@id/send_button"
+            android:layout_toEndOf="@id/image_button"
+            android:background="@drawable/text_rounded_corner"
+            android:elevation="4dp"
+            android:hint="@string/user_hint_msg"
+            android:padding="10dp"
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:layout_width="52dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/send_button"
+            android:contentDescription="@string/sends_user_message"
+            android:padding="2dp"
+            android:layout_marginStart="2dp"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+    </RelativeLayout>
+
+</RelativeLayout>

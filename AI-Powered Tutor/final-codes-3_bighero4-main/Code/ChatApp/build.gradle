@@ -1,0 +1,118 @@
+import java.nio.file.Paths
+
+plugins {
+    id "com.android.application"
+}
+
+// Shell-based Genie implementation - no longer needs QNN SDK paths or model assets
+
+android {
+    compileSdk = Integer.valueOf(androidCompileSDK)
+
+    defaultConfig {
+        applicationId = "com.quicinc.chatapp"
+
+        // TODO: use androidMinSDK value from gradle.properties once it updates to 31
+        minSdk = Integer.valueOf(31)
+        targetSdk = Integer.valueOf(androidTargetSDK)
+        versionCode = 1
+        versionName = "1.0"
+        signingConfig = signingConfigs.debug
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.valueOf("VERSION_$javaSourceCompatibilityVersion")
+        targetCompatibility JavaVersion.valueOf("VERSION_$javaTargetCompatibilityVersion")
+    }
+
+    namespace = "com.quicinc.chatapp"
+    aaptOptions {
+        noCompress "bin", "json"
+    }
+    
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+// Custom task to configure device for ChatApp deployment
+task setupDeviceForChatApp {
+    doLast {
+        println "🔧 Configuring device for ChatApp..."
+        
+        // Check if device is connected
+        def devices = "adb devices".execute()
+        devices.waitFor()
+        if (!devices.text.contains("device")) {
+            throw new RuntimeException("❌ No Android device connected")
+        }
+        
+        // Enable ADB root
+        println "   Enabling ADB root access..."
+        "adb root".execute().waitFor()
+        Thread.sleep(2000)
+        "adb wait-for-device".execute().waitFor()
+        
+        // Check and set SELinux to permissive
+        def selinuxCheck = "adb shell getenforce".execute()
+        selinuxCheck.waitFor()
+        def currentStatus = selinuxCheck.text.trim()
+        println "   Current SELinux status: $currentStatus"
+        
+        if (currentStatus != "Permissive") {
+            println "   Setting SELinux to permissive mode..."
+            def selinuxSet = "adb shell setenforce 0".execute()
+            selinuxSet.waitFor()
+            if (selinuxSet.exitValue() == 0) {
+                println "✅ SELinux configured successfully"
+            } else {
+                println "⚠️  Warning: Could not configure SELinux"
+            }
+        } else {
+            println "✅ SELinux already in permissive mode"
+        }
+        
+        // Set file permissions for genie bundle
+        println "   Setting genie bundle permissions..."
+        "adb shell test -d /data/local/tmp/genie_bundle".execute().waitFor()
+        "adb shell chmod 755 /data/local/tmp/genie_bundle/* 2>/dev/null || true".execute().waitFor()
+        println "✅ Device configuration completed"
+    }
+}
+
+// Make installDebug depend on device setup
+tasks.whenTaskAdded { task ->
+    if (task.name == 'installDebug') {
+        task.dependsOn setupDeviceForChatApp
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ["*.jar"], dir: "libs")
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "com.google.android.material:material:1.12.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.0"
+    implementation 'androidx.appcompat:appcompat:1.6.1' // For AppCompatActivity
+    implementation 'androidx.cardview:cardview:1.0.0' // For CardView
+    implementation 'androidx.activity:activity-ktx:1.7.2' // For ActivityResultLauncher
+    implementation 'androidx.recyclerview:recyclerview:1.3.0' // For RecyclerView
+    implementation 'com.google.code.gson:gson:2.10.1' // For JSON serialization
+    
+    // PDF processing
+    implementation 'com.itextpdf:itextpdf:5.5.13.3' // For PDF text extraction
+    
+    // Markdown rendering
+    implementation 'io.noties.markwon:core:4.6.2'
+    implementation 'io.noties.markwon:ext-strikethrough:4.6.2'
+    implementation 'io.noties.markwon:ext-tables:4.6.2'
+    implementation 'io.noties.markwon:ext-tasklist:4.6.2'
+}
+
+if (System.getProperty("user.dir") != project.rootDir.path) {
+    throw new RuntimeException("This project should be opened from the `android` directory (parent of ChatApp directory), NOT the ChatApp directory.")
+}

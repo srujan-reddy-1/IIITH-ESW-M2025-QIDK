@@ -1,0 +1,27 @@
+{
+  "backend": "qnn_htp",
+  "model_id": "llama_v3_2_3b_instruct",
+  "context_length": 4096,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "top_k": 50,
+  "repetition_penalty": 1.1,
+  "session": {
+    "tokenizer": {
+      "path": "<tokenizer_path>"
+    },
+    "size": 4096
+  },
+  "extensions": "<htp_backend_ext_path>",
+  "ctx-bins": [
+    "<models_path>/weight_sharing_model_1_of_4.serialized.bin",
+    "<models_path>/weight_sharing_model_2_of_4.serialized.bin",
+    "<models_path>/weight_sharing_model_3_of_4.serialized.bin",
+    "<models_path>/weight_sharing_model_4_of_4.serialized.bin"
+  ],
+  "prompt_templates": {
+    "system": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>",
+    "user": "<|start_header_id|>user<|end_header_id|>\n\n{user_input}<|eot_id|>",
+    "assistant": "<|start_header_id|>assistant<|end_header_id|>\n\n"
+  }
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChatApp">
+        
+        <!-- Google ML Kit automatic model download -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+        
+        <!-- Main/Splash Activity - decides where to go -->
+        <activity
+            android:name="com.quicinc.chatapp.MainActivity"
+            android:exported="true"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.LoginActivity"
+            android:exported="false"
+            android:noHistory="true" />
+
+        <!-- Register Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.RegisterActivity"
+            android:exported="false" />
+
+        <!-- Home Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.HomeActivity"
+            android:exported="false" />
+
+        <!-- Conversation Activity (Chat/PDF) -->
+        <activity
+            android:name="com.quicinc.chatapp.Conversation"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.HomeActivity" />
+
+        <!-- Quiz Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.QuizActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.HomeActivity" />
+
+        <!-- Quiz History Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.QuizHistoryActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.HomeActivity" />
+
+        <!-- Quiz Detail Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.QuizDetailActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.QuizHistoryActivity" />
+
+        <!-- Flashcard Activities -->
+        <activity
+            android:name="com.quicinc.chatapp.FlashcardActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.HomeActivity" />
+
+        <activity
+            android:name="com.quicinc.chatapp.FlashcardPdfGeneratorActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.FlashcardActivity" />
+
+        <activity
+            android:name="com.quicinc.chatapp.CreateFlashcardSetActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.FlashcardActivity" />
+
+        <activity
+            android:name="com.quicinc.chatapp.FlashcardStudyActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.FlashcardActivity" />
+
+        <!-- Create Gem Activity -->
+        <activity
+            android:name="com.quicinc.chatapp.CreateGemActivity"
+            android:exported="false"
+            android:parentActivityName="com.quicinc.chatapp.HomeActivity" />
+
+        <uses-native-library
+            android:name="libadsprpc.so"
+            android:required="false" />
+        <uses-native-library
+            android:name="libcdsprpc.so"
+            android:required="false" />
+    </application>
+</manifest>

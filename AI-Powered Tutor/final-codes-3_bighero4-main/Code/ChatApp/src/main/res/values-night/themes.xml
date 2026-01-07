@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Dark theme for AI Tutor app -->
+    <style name="Theme.AITutor" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color for dark mode -->
+        <item name="colorPrimary">@color/sky_blue</item>
+        <item name="colorPrimaryVariant">@color/sky_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_inverse</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/sky_blue_light</item>
+        <item name="colorSecondaryVariant">@color/sky_blue_dark</item>
+        <item name="colorOnSecondary">@color/text_inverse</item>
+        
+        <!-- Surface colors for dark mode -->
+        <item name="colorSurface">@color/surface_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/background_secondary</item>
+        
+        <!-- Background colors for dark mode -->
+        <item name="android:colorBackground">@color/background_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        
+        <!-- Status bar for dark mode -->
+        <item name="android:statusBarColor">@color/background_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        
+        <!-- Navigation bar for dark mode -->
+        <item name="android:navigationBarColor">@color/background_primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/background_primary</item>
+    </style>
+</resources>

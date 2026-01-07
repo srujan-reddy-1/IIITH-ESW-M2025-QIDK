@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/topic_lecture_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="L1"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:background="@drawable/circle_background"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/topic_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8 topics"
+        android:textSize="12sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_arrow_forward"
+        android:contentDescription="View topics"
+        app:tint="?android:attr/textColorSecondary" />
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Image-Inpainting</string>
+
+    <string name="aot_gan_model_asset">aot_gan.tflite</string>
+    <string name="lama_model_asset">lama_dilated.tflite</string>
+    <string name="hifill_model_asset">model_float32.tflite</string>
+
+    <string-array name="model_array">
+        <item>Select a Model</item>
+        <item>AOT-GAN</item>
+        <item>LaMa</item>
+        <item>Hi-Fill</item>
+    </string-array>
+
+    <string-array name="runtime_array">
+        <item>Select a Runtime</item>
+        <item>NPU</item>
+        <item>GPU</item>
+        <item>CPU</item>
+    </string-array>
+</resources>

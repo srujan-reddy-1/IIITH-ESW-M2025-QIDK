@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Color Overrides -->
+    
+    <!-- Background Colors - Inverted -->
+    <color name="background_primary">#000000</color>
+    <color name="background_secondary">#111111</color>
+    <color name="background_tertiary">#1A1A1A</color>
+    
+    <!-- Surface Colors - Dark -->
+    <color name="surface_primary">#000000</color>
+    <color name="surface_elevated">#1A1A1A</color>
+    
+    <!-- Text Colors - Inverted -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E0E0E0</color>
+    <color name="text_tertiary">#B0B0B0</color>
+    
+    <!-- Border Colors - Inverted -->
+    <color name="border_light">#FFFFFF</color>
+    <color name="border_medium">#E0E0E0</color>
+    <color name="divider">#333333</color>
+    
+    <!-- Card and Component Colors -->
+    <color name="white">#000000</color>
+    <color name="black">#FFFFFF</color>
+    
+    <!-- Chat Colors - Dark Theme -->
+    <color name="atom_message_bg">#1A1A1A</color>
+    <color name="user_message_bg">#2A2A2A</color>
+</resources>

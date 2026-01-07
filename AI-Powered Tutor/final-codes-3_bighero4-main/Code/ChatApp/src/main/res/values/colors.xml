@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern AI Tutor Brand Colors (Unacademy-inspired) -->
+    <color name="primary_brand">#08BD80</color>
+    <color name="primary_brand_dark">#06A170</color>
+    <color name="primary_brand_light">#1FC88A</color>
+    
+    <color name="secondary_blue">#2D5BFF</color>
+    <color name="secondary_blue_dark">#1E3A8A</color>
+    <color name="secondary_blue_light">#6366F1</color>
+    
+    <!-- Sky Blue Colors -->
+    <color name="sky_blue">#5186BC</color>
+    <color name="sky_blue_light">#B0E0E6</color>
+    <color name="sky_blue_dark">#4A90E2</color>
+    
+    <color name="accent_purple">#8B5CF6</color>
+    <color name="accent_purple_dark">#7C3AED</color>
+    <color name="accent_purple_light">#A78BFA</color>
+    
+    <!-- Additional Brand Colors -->
+    <color name="brand_orange">#F59E0B</color>
+    <color name="brand_pink">#EC4899</color>
+    <color name="brand_red">#EF4444</color>
+    
+    <!-- Missing colors for compatibility -->
+    <color name="background_light">#F8FAFC</color>
+    <color name="surface_light">#FEFEFE</color>
+    <color name="primary_blue">#2D5BFF</color>
+    <color name="accent_green">#08BD80</color>
+    <color name="accent_green_light">#1FC88A</color>
+    
+    <!-- Modern UI Colors -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#F8FAFC</color>
+    <color name="background_tertiary">#F1F5F9</color>
+    <color name="background_dark">#0F172A</color>
+    
+    <color name="surface_primary">#FFFFFF</color>
+    <color name="surface_elevated">#FEFEFE</color>
+    <color name="surface_dark">#1E293B</color>
+    
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_tertiary">#94A3B8</color>
+    <color name="text_inverse">#FFFFFF</color>
+    
+    <!-- Border and Divider Colors -->
+    <color name="border_light">#E2E8F0</color>
+    <color name="border_medium">#CBD5E1</color>
+    <color name="divider">#F1F5F9</color>
+    <color name="green_light">#C8E6C9</color>
+    
+    <!-- Chat Colors -->
+    <color name="atom_message_bg">#E8F4FD</color>
+    <color name="user_message_bg">#1E88E5</color>
+    <color name="message_text_atom">#263238</color>
+    <color name="message_text_user">#FFFFFF</color>
+    
+    <!-- Subject Colors -->
+    <color name="math_color">#FF5722</color>
+    <color name="science_color">#4CAF50</color>
+    <color name="history_color">#795548</color>
+    <color name="english_color">#9C27B0</color>
+    <color name="geography_color">#009688</color>
+    
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="success_light">#E8F5E9</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="warning_light">#FFF3E0</color>
+    <color name="error_color">#F44336</color>
+    <color name="error_light">#FFEBEE</color>
+    
+    <!-- Legacy Colors (for compatibility) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bot_color">#E8F4FD</color>
+    <color name="user_color">#1E88E5</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="navy_blue">#1A237E</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_dark">#616161</color>
+    <color name="teal">#00695C</color>
+    <color name="teal_light">#E0F7FA</color>
+    <color name="gold">#F9A825</color>
+    <color name="blue">#1976D2</color>
+    <color name="pink">#A75AB3</color>
+    <color name="purple">#62488E</color>
+    <color name="blue_light">#BBDEFB</color>
+    <color name="light_blue">#E3F2FD</color>
+    <color name="dark_blue">#0D47A1</color>
+    <color name="green">#388E3C</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#F44336</color>
+    <color name="yellow">#FBC02D</color>
+    <color name="light_orange">#FFF3E0</color>
+    <color name="dark_orange">#E65100</color>
+    <color name="text_primary_light">#212121</color>
+    <color name="text_secondary_light">#757575</color>
+    <color name="dsa_color">#3B6697</color> <!-- Deep Navy Blue -->
+    <color name="osn_color">#3B6697</color> <!-- Royal Blue -->
+    <color name="iss_color">#3B6697</color> <!-- Medium Blue -->
+    <color name="automata_color">#3B6697</color> <!-- Bright Blue -->
+    <color name="data_app_color">#3B6697</color> <!-- Light Blue -->
+    <color name="embedded_color">#3B6697</color> <!-- Embedded Systems Color -->
+    <color name="science1_color">#3B6697</color> <!-- Science-1 Color -->
+    <color name="algorithm_analysis_color">#3B6697</color> <!-- Algorithm Analysis Color -->
+
+</resources>

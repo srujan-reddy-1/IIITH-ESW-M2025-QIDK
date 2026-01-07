@@ -1,0 +1,61 @@
+{
+  "version": "3.0.0",
+  "model_type": "llama",
+  "vocab_size": 32000,
+  "normalizer": {
+    "type": "Sequence",
+    "normalizers": []
+  },
+  "pre_tokenizer": {
+    "type": "Metaspace",
+    "replacement": "▁",
+    "add_prefix_space": true
+  },
+  "post_processor": {
+    "type": "TemplateProcessing",
+    "single": "[BOS] $A [EOS]",
+    "special_tokens": {
+      "[BOS]": 1,
+      "[EOS]": 2
+    }
+  },
+  "decoder": {
+    "type": "Metaspace",
+    "replacement": "▁",
+    "add_prefix_space": true
+  },
+  "model": {
+    "type": "BPE",
+    "vocab": {},
+    "merges": []
+  },
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "<unk>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "<s>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "</s>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ]
+}
